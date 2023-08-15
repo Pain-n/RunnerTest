@@ -10,7 +10,9 @@ public class EndGamePanel : MonoBehaviour
     public Button RestartButton;
     void Start()
     {
-        ResultsText.text = $"Score: {Controller.Score} \n Best Score: {GameController.BestScore}";
+        if(Controller.Score > GlobalContext.Instance.BestScore) GlobalContext.Instance.BestScore = Controller.Score;
+
+        ResultsText.text = $"Score: {Controller.Score} \n Best Score: {GlobalContext.Instance.BestScore}";
 
         RestartButton.onClick.AddListener(() =>
         {

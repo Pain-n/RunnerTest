@@ -9,7 +9,6 @@ public class GameController : MonoBehaviour
     public GameObject EnvironmentPrefab;
     public GameObject EndGamePanel;
 
-    public static int BestScore;
     [HideInInspector]
     public int Score;
     void Start()
